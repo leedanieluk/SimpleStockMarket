@@ -1,8 +1,8 @@
 # Simple Stock Market
 
-This is a simple realtime stock market system that performs calculations for every new trade.
+This is a simple realtime stock market system that performs calculations and prints the results for every new trade.
 Trades are published by a `TradePublisher` and consumed by a single `TradeSubscriber` through a `LinkedBlockingQueue` channel, mainly to allow concurrent reads and writes.
-I've used a one-to-many messaging design so that additional subscribers could be added and allow to scale the system horizontally.
+I've used a one-to-many messaging design so that additional subscribers could be added and allow to scale the system horizontally, if necessary.
 
 Running the app:
 * `com.leedanieluk.Main` contains the `psvm` method
@@ -22,3 +22,7 @@ Additional notes:
 * `TradeSubscriber` contains most of the 'business logic'
 * Trades are published randomly every 1 to 4 seconds
 * The system shutdowns in around 60 seconds after starting (arbitrarily)
+
+Sample calculation output:
+
+`Calculation{stockId='JUI', dividentYield=0.3459666160721975, peRatio=2.890452296678581, trade=Trade{stockIdentifier='JUI', timestamp=2024-06-07T11:24:24.229, shares=50, type=SELL, price=66.48040282360736}, vwap=66.48040282360736, geometricMeans={JUI=66.48040282360736}}`
