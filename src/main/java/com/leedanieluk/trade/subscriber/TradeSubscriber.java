@@ -34,7 +34,7 @@ public class TradeSubscriber implements Consumer<Trade> {
         // a) i. Calculate dividend yield
         double dividendYield = CalculationUtil.calculateDividendYield(tradedStock, trade.getPrice());
 
-        // a) ii. Calculate P/E ratio (Note: we assume that this can take the value of Double.POSITIVE_INFINITY, alternatively could have set value of null, thrown a runtime exception, etc...) when last dividend is 0
+        // a) ii. Calculate P/E ratio (Note: we assume that this can take the value of Double.POSITIVE_INFINITY when last dividend is 0, alternatively could have set value of null, thrown a runtime exception, etc...)
         double peRatio = CalculationUtil.calculatePERatio(tradedStock, trade.getPrice());
 
         // a) iii. Capture trade

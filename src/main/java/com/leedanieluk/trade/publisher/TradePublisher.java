@@ -38,7 +38,7 @@ public class TradePublisher implements Publisher<Trade> {
                 Trade trade = generateRandom();
                 trades.add(trade);
                 try {
-                    TimeUnit.SECONDS.sleep(1);
+                    TimeUnit.SECONDS.sleep((int) (Math.random() * 3) + 1);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
