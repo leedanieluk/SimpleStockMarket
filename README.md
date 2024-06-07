@@ -19,5 +19,6 @@ Enhancements:
 * better documentation
 
 Additional notes:
+* `TradeSubscriber` contains most of the 'business logic'
 * Trades are published randomly every 1 to 4 seconds
 * The system shutdowns in around 60 seconds after starting (arbitrarily)
